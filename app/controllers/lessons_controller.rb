@@ -35,7 +35,6 @@ class LessonsController < ApplicationController
       redirect_to lessons_path
     end
   end
-  
 
   private
 
