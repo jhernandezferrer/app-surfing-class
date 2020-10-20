@@ -11,11 +11,8 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(lesson_params)
     if @lesson.save
-      # TODO: Ask Patrick
-      # flash[:success] = "Object successfully created"
       redirect_to lesson_path(@lesson), notice: 'Lesson was successfully created.'
     else
-      # flash[:error] = "Something went wrong"
       render 'new'
     end
   end
@@ -24,21 +21,26 @@ class LessonsController < ApplicationController
   end
 
   def update
-      if @lesson.update()
-        flash[:success] = "Lesson was successfully updated"
-        redirect_to @lesson
+      if @lesson.update(lesson_params)
+        redirect_to @lesson, notice: 'Lesson was successfully updated.'
       else
-        flash[:error] = "Something went wrong"
         render 'edit'
       end
+  end
+  
+  def destroy
+    if @Lesson.destroy
+      redirect_to lessons_url, notice: 'Lesson was successfully deleted.'
+    else
+      redirect_to lessons_path
+    end
   end
   
 
   private
 
   def lesson_params
-    # TODO: Add data parametre/
-    params.require(:lesson).permit(:title, :description, :location)
+    params.require(:lesson).permit(:title, :description, :location, :start_lesson, :end_lesson)
   end
 
   def find_lesson
