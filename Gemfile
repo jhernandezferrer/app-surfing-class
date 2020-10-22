@@ -61,6 +61,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Gemfile
 gem 'devise'
 gem 'faker'
+gem 'simple_form'
 
 # Pundit -> To authorization actions
 gem 'pundit'

@@ -1,0 +1,27 @@
+<h1><%= @lesson.title %></h1>
+<br>
+<p>
+  <strong>Description:</strong>
+  <%= @lesson.description %>
+</p>
+<p>
+  <strong>Teacher</strong>
+  <%= @lesson.user_id %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%= @lesson.location %>
+</p>
+<p>
+  <strong>Duration</strong>
+  <%=  (@lesson.end_lesson - @lesson.start_lesson).to_i / 60 %>
+  min.
+</p>
+
+<% if current_user == @lesson.user %>
+  <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<% end %>
+<% if curret_user == @lesson.user %>
+  <%= link_to 'Delete', @lesson, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
+<%= link_to 'Back', lessons_path %>

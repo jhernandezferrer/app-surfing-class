@@ -1,16 +1,21 @@
 class LessonsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :find_lesson, only: [:edit, :update, :show, :destory]
+
   def index
     @lessons = Lesson.all
+    @restaurants = policy_scope(Lesson)
   end
   
   def new
     @lessons = Lesson.new
+    authorize @lesson
   end
   
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
+    authorize @lesson
     if @lesson.save
       redirect_to lesson_path(@lesson), notice: 'Lesson was successfully created.'
     else
@@ -45,5 +50,6 @@ class LessonsController < ApplicationController
 
   def find_lesson
     @lesson = Lesson.find(params[:id])
+    authorize @lesson
   end  
 end
