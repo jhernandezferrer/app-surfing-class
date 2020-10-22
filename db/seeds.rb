@@ -34,6 +34,7 @@ puts 'Creating 50 fake lessons...'
     location: Faker::Address.city,
     start_lesson: start_lesson,
     end_lesson: end_lesson,
+    price: rand(10..30)
     )
   lesson.save!
 end

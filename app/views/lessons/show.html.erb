@@ -17,6 +17,10 @@
   <%=  (@lesson.end_lesson - @lesson.start_lesson).to_i / 60 %>
   min.
 </p>
+<p>
+  <strong>Price:</strong>
+  <%= @lesson.price %> € per person.
+</p>
 
 <% if current_user == @lesson.user %>
   <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
