@@ -14,8 +14,5 @@
     <% if policy(lesson).edit? %>
       <%= link_to "Edit", edit_lesson_path(lesson) %>
     <% end %>
-    <% if policy(lesson).destroy? %>
-      <%= link_to "Delete", lesson, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
   <% end %>
 </div>
