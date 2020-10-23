@@ -30,7 +30,6 @@ puts 'Creating 50 fake lessons...'
     id: id,
     title: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
-    user_id: rand(1..20),
     location: Faker::Address.city,
     start_lesson: start_lesson,
     end_lesson: end_lesson,
