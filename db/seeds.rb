@@ -14,7 +14,6 @@ User.destroy_all
 puts 'Creating 20 fake users...'
 (1..20).each do |id|
   user = User.new(
-    id: id,
     name: Faker::Name.name_with_middle,
     description: Faker::Quote.matz,
     email: Faker::Internet.email,
@@ -27,7 +26,6 @@ puts 'Creating 50 fake lessons...'
   start_lesson = Faker::Time.forward(days: 5,  period: :morning)
   end_lesson = start_lesson + 30.minutes
   lesson = Lesson.new(
-    id: id,
     title: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
     location: Faker::Address.city,
