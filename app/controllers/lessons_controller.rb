@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
-  before_action :find_lesson, only: [:edit, :update, :show, :destory]
+  before_action :find_lesson, only: [:edit, :update, :show, :destroy]
 
   def index
     @lessons = Lesson.all
@@ -8,7 +8,7 @@ class LessonsController < ApplicationController
   end
 
   def new
-    @lessons = Lesson.new
+    @lesson = Lesson.new
     authorize @lesson
   end
 

@@ -28,10 +28,10 @@ puts 'Creating 50 fake lessons...'
   lesson = Lesson.new(
     title: Faker::Hipster.word,
     description: Faker::Hipster.sentence,
-    user_id: rand(1..20),
     location: Faker::Address.city,
     start_lesson: start_lesson,
     end_lesson: end_lesson,
+    price: rand(10..30)
     )
   lesson.save!
 end
