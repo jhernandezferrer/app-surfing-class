@@ -1,5 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <h1>Surfplace, surf at your fingertips.</h1>
+    <h4>From the confort of your home, discover the best deals on surf lessons across the world!</h4>
 
-
-<%= link_to "See all lessons", lessons_path %>
+    <button class="blue-button large-button">
+      <%= link_to "Start Here!", new_user_registration_path %>
+    </button>
+    <%= link_to "See all lessons", lessons_path %>
+  </div>
+</div>
