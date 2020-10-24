@@ -1,17 +1,17 @@
 class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
-  before_action :find_lesson, only: [:edit, :update, :show, :destory]
+  before_action :find_lesson, only: [:edit, :update, :show, :destroy]
 
   def index
     @lessons = Lesson.all
     @restaurants = policy_scope(Lesson)
   end
-  
+
   def new
     @lesson = Lesson.new
     authorize @lesson
   end
-  
+
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
