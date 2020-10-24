@@ -1,7 +1,23 @@
 .blue-button {
-
+  background-color: $blue;
+  color: white;
+  font-style: white;
+  border-radius: 5px;
+  border-color: $blue;
+  border-width: 2px;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
 .large-button {
+  padding: 5px 100px 5px 100px;
+}
 
+.blue-button:hover {
+  text-decoration: none;
+  background-color: white;
+  color: $blue;
 }

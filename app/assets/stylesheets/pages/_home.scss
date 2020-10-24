@@ -1,10 +1,30 @@
 // Specific CSS for your home-page
 .banner {
   background-color: white;
-  height: 500px;
+  height: 300px;
   text-padding: 200px;
 }
 
 .container {
   padding: 60px 20px;
+}
+
+.image-banner {
+  height: 300px;
+  width: 100%;
+}
+
+.banner-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+
+}
+
+.footer {
+  background-color: $yellow;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
