@@ -2,10 +2,17 @@
   <div class="container">
     <h1>Surfplace, surf at your fingertips.</h1>
     <h4>From the confort of your home, discover the best deals on surf lessons across the world!</h4>
-
-    <button class="blue-button large-button">
-      <%= link_to "Start Here!", new_user_registration_path %>
-    </button>
-    <%= link_to "See all lessons", lessons_path %>
+      <div class="banner-buttons">
+      <%= link_to "Start Here!", new_user_registration_path, class: "blue-button large-button" %>
+      <%= link_to "See all lessons", lessons_path, class: "blue-button large-button" %>
+      </div>
   </div>
+</div>
+<div class="image-banner">
+    <%= image_tag "group_in_the_water.jpeg", class: "banner" %>
+</div>
+<div class="footer">
+  <%= image_tag "facebook.png", class: "facebook social avatar" %>
+  <%= image_tag "instagram.png", class: "instagram social avatar" %>
+  <%= image_tag "email.png", class: "email social avatar" %>
 </div>
