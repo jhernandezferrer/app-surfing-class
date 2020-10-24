@@ -5,7 +5,7 @@
   <%= @lesson.description %>
 </p>
 <p>
-  <strong>Teacher</strong>
+  <strong>Teacher:</strong>
   <%= @lesson.user_id %>
 </p>
 <p>
@@ -13,7 +13,7 @@
   <%= @lesson.location %>
 </p>
 <p>
-  <strong>Duration</strong>
+  <strong>Duration:</strong>
   <%=  (@lesson.end_lesson - @lesson.start_lesson).to_i / 60 %>
   min.
 </p>
@@ -30,4 +30,6 @@
   <%= link_to 'Delete', @lesson, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <% end %>
 <%= link_to 'Back', lessons_path %>
-<%= link_to 'Book Now!', new_lesson_booking_path(params[:id]) %>
+<% if current_user != @lesson.user %>
+  <%= link_to 'Book Now!', new_lesson_booking_path(params[:id]) %>
+<% end %>
