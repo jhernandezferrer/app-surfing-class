@@ -18,6 +18,7 @@
   min.
 </p>
 
+
 <% if current_user == @lesson.user %>
   <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 <% end %>
@@ -25,3 +26,4 @@
   <%= link_to 'Delete', @lesson, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <% end %>
 <%= link_to 'Back', lessons_path %>
+<%= link_to 'Book Now!', new_lesson_booking_path(params[:id]) %>
