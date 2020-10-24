@@ -6,12 +6,12 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
     @restaurants = policy_scope(Lesson)
   end
-  
+
   def new
     @lessons = Lesson.new
     authorize @lesson
   end
-  
+
   def create
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
@@ -33,7 +33,7 @@ class LessonsController < ApplicationController
         render 'edit'
       end
   end
-  
+
   def destroy
     if @Lesson.destroy
       redirect_to lessons_url, notice: 'Lesson was successfully deleted.'
@@ -51,5 +51,5 @@ class LessonsController < ApplicationController
   def find_lesson
     @lesson = Lesson.find(params[:id])
     authorize @lesson
-  end  
+  end
 end
