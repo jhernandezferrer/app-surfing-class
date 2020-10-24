@@ -45,7 +45,7 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :location, :start_lesson, :end_lesson)
+    params.require(:lesson).permit(:title, :description, :location, :start_lesson, :end_lesson, :price)
   end
 
   def find_lesson
