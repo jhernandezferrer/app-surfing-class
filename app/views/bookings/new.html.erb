@@ -1,1 +1,30 @@
-new.html.erb
+<div class="container">
+  <h1>Confirm your booking</h1>
+  <br>
+  <p>
+    <strong>Title:</strong>
+    <%= @lesson.title %>
+  </p>
+  <p>
+    <strong>Teacher:</strong>
+    <%= @lesson.user_id %>
+  </p>
+  <p>
+    <strong>Location:</strong>
+    <%= @lesson.location %>
+  </p>
+  <p>
+    <strong>Duration:</strong>
+    <%=  (@lesson.end_lesson - @lesson.start_lesson).to_i / 60 %>
+    min.
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <%= @lesson.price %> € per person.
+  </p>
+
+
+  <%= simple_form_for([@lesson, @booking]) do |f| %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
