@@ -52,4 +52,9 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
     authorize @lesson
   end
+
+  # def lesson_duration
+  #   find_lesson
+  #   @duration = @lesson.end_lesson - @lesson.start_lesson
+  # end
 end
