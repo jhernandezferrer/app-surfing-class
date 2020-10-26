@@ -2,18 +2,24 @@
 
 <button><%= link_to "Create new lesson", new_lesson_path %></button>
 <br><br>
-<div>
+<div class="container">
   <% @lessons.each do |lesson| %>
-    <div>
-      <h3><%= lesson.title %></h3>
-      <p><%= lesson.description %></p>
-    </div>
-    <p>Location: <%= lesson.location %></p>
-    <p>Teacher: <%= lesson.user_id %></p>
-    <p>Price: <%= lesson.price %>€ per person.</p>
-    <%= link_to "Show", lesson %>
-    <% if policy(lesson).edit? %>
-      <%= link_to "Edit", edit_lesson_path(lesson) %>
+
+    <%= link_to lesson do %>
+
+      <div class="card-lesson">
+        <div>
+          <h3><%= lesson.title %></h3>
+          <p><%= lesson.description %></p>
+        </div>
+        <p>Location: <%= lesson.location %></p>
+        <p>Teacher: <%= lesson.user_id %></p>
+        <p>Price: <%= lesson.price %>€ per person.</p>
+      
+      <% if policy(lesson).edit? %>
+        <%= link_to "Edit", edit_lesson_path(lesson) %>
+      <% end %>
     <% end %>
   <% end %>
+    </div>
 </div>
