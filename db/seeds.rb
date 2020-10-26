@@ -20,19 +20,21 @@ puts 'Creating 20 fake users...'
     password: Faker::Internet.password(min_length: 8),
     )
   user.save!
+  puts 'Creating 2 fake lessons...'
+  (1..2).each do |id|
+    start_lesson = Faker::Time.forward(days: 5,  period: :morning)
+    end_lesson = start_lesson + 30.minutes
+    lesson = Lesson.new(
+      title: Faker::Hipster.word,
+      description: Faker::Hipster.sentence,
+      location: Faker::Address.city,
+      start_lesson: start_lesson,
+      end_lesson: end_lesson,
+      price: rand(10..30),
+      user: user
+      )
+    lesson.save!
+  end
 end
-puts 'Creating 50 fake lessons...'
-(1..50).each do |id|
-  start_lesson = Faker::Time.forward(days: 5,  period: :morning)
-  end_lesson = start_lesson + 30.minutes
-  lesson = Lesson.new(
-    title: Faker::Hipster.word,
-    description: Faker::Hipster.sentence,
-    location: Faker::Address.city,
-    start_lesson: start_lesson,
-    end_lesson: end_lesson,
-    price: rand(10..30)
-    )
-  lesson.save!
-end
+
 puts 'Finished!'

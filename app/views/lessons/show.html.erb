@@ -31,5 +31,7 @@
 <% end %>
 <%= link_to 'Back', lessons_path %>
 <% if current_user != @lesson.user %>
-  <%= link_to 'Book Now!', new_lesson_booking_path(params[:id]) %>
+  <%= link_to 'Book Now!', new_lesson_booking_path(@lesson) %>
 <% end %>
+
+<!-- params[:id] -->

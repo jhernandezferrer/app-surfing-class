@@ -4,10 +4,10 @@
 <br><br>
 <div class="container">
   <% @lessons.each do |lesson| %>
-
     <%= link_to lesson do %>
 
       <div class="card-lesson">
+        <%= image_tag "/app/assets/images/surfboard_ocean.jpg" %>
         <div>
           <h3><%= lesson.title %></h3>
           <p><%= lesson.description %></p>
@@ -16,10 +16,10 @@
         <p>Teacher: <%= lesson.user_id %></p>
         <p>Price: <%= lesson.price %>€ per person.</p>
       
-      <% if policy(lesson).edit? %>
-        <%= link_to "Edit", edit_lesson_path(lesson) %>
-      <% end %>
+        <% if policy(lesson).edit? %>
+          <%= link_to "Edit", edit_lesson_path(lesson) %>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
-    </div>
 </div>
