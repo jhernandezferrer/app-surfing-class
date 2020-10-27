@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .card-lesson {
   overflow: hidden;
   background: white;
@@ -5,6 +9,61 @@
   margin-bottom: 15px;
 }
 
+// *** TOP PART ***
+// Set background image
+.card-lesson-header {
+  display: flex;
+  background-image: image-url('surfboard_ocean.jpg');
+  background-position: 0% 70%;
+  background-size: cover;
+  align-items: flex-start;
+  padding-top: 15px;
+  height: 180px;
+}
+
+// Location
+.lesson-location {
+  background-color: white;
+  color: rgb(70, 69, 69);
+  padding: 8px 16px;
+  border-radius: 0px 15px 15px 0px;
+}
+
+
+// *** BODY PART ***
+.card-lesson .lesson-info {
+  display: flex;
+  padding: 16px;
+  color: rgb(70, 69, 69);
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-lesson .lesson-info div h2 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-lesson .lesson-info div p {
+  font-weight: 100;
+  color: gray;
+  margin: 0;
+}
+
+.card-lesson .lesson-info .lesson-price {
+  font-weight: 600;
+  color: $blue;
+}
+
+.card-lesson .lesson-info .lesson-price p {
+  color: $blue;
+  margin: 0;
+}
+
+.card-lesson .lesson-info .lesson-price h2 {
+  margin: 0;
+}
 // .card-lesson > img {
 //   height: 200px;
 //   width: 100%;
