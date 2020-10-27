@@ -2,22 +2,30 @@
 
 <button><%= link_to "Create new lesson", new_lesson_path %></button>
 <br><br>
-<div>
+<div class="container">
   <% @lessons.each do |lesson| %>
-    <div class="card-lesson">
-      <%#TODO: Add image %>
-      <p>Location: <%= lesson.location %></p>
-      <div class="card-lesson-info">
-        <h2><%= lesson.title %></h2>
-        <%# TODO: Set duration class %>
-        <%# <p>Time: <%= @duration </p> %>
+    <%= link_to lesson do %>
+
+      <div class="card-lesson">
+        <div class="card-lesson-header">
+          <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.location %></p>
+          <% if policy(lesson).edit? %>
+            <%= link_to "Edit", edit_lesson_path(lesson) %>
+          <% end %>
+        </div>
+        <div class="lesson-info">
+          <div>
+            <h2><%= lesson.title %></h2>
+            <p><i class="fas fa-calendar-day"></i> Days <i class="fas fa-clock"></i> time</p>
+          </div>
+          <div class="lesson-price">
+            <h2><%= lesson.price %>€</h2>
+            <p>per person</p>
+          </div>
+          <%#TODO: Set avatar class %>
+          <%# <%= image_tag "avatar.jpg" %>
+        </div>
       </div>
-        <p class="card-lesson-user avatar-bordered">Teacher: <%= lesson.user_id %></p>
-        <h2 class="card-lesson-pricing"><%= lesson.price %>€ per person.</h2>
-        <%= link_to "Show", lesson %>
-        <% if policy(lesson).edit? %>
-          <%= link_to "Edit", edit_lesson_path(lesson) %>
-        <% end %>
-    </div>
+    <% end %>
   <% end %>
 </div>
