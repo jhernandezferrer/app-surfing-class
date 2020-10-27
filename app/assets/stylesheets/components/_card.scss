@@ -1,15 +1,22 @@
+// GRID
+//TODO: Design a grid
 
-//TODO: Remove text decoration
-// .card-lesson a {
-//   text-decoration: none;
-// }
 
+a:hover {
+  text-decoration: none;
+}
+
+// CARD
 .card-lesson {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 15px;
   border-radius: 16px;
+}
+
+.perimeter-card:hover .card-lesson {
+  box-shadow: 3px 3px 15px rgba(0,0,0,0.9);
 }
 
 // *** TOP PART ***
@@ -35,20 +42,21 @@
   font-size: 18px;
 }
 
-.card-lesson-header .lesson-edit {
+// Edit button
+.btn-edit {
   opacity: 0;
-  background-color: $blue;
+  position: absolute;
+  top: 24px;
+  right: 15px;
   padding: 8px 24px;
   border-radius: 15px 0px 0px 15px;
   font-weight: 500;
   font-size: 18px;
 }
 
-.card-lesson:hover .card-lesson-header .lesson-edit {
+.perimeter-card:hover .btn-edit {
   opacity: 1;
 }
-
-
 
 // *** BODY PART ***
 .card-lesson .lesson-info {

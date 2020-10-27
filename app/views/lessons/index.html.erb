@@ -2,21 +2,17 @@
 
   <h1>All lessons</h1>
 
-  <button class="btn btn-primary"><%= link_to "Create new lesson", new_lesson_path %></button>
+  <%= link_to "Create new lesson", new_lesson_path, class: "blue-button" %>
 
   <br><br>
 
   <div class="row">
     <% @lessons.each do |lesson| %>
-      <div class="col-12 col-md-6 col-xl">
+      <div class="perimeter-card col-12 col-md-6 col-xl-4">
         <%= link_to lesson do %>
-
           <div class="card-lesson">
             <div class="card-lesson-header">
               <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.location %></p>
-              <% if policy(lesson).edit? %>
-              <p class="lesson-edit"><i class="far fa-edit"></i> <%= link_to "Edit", edit_lesson_path(lesson) %></p>
-              <% end %>
             </div>
 
             <div class="lesson-info">
@@ -29,10 +25,14 @@
                 <h2><%= lesson.price %>€</h2>
                 <p>per person</p>
               </div>
-              <%#TODO: Set avatar class %>
-              <%# <%= image_tag "avatar.jpg" %>
+              <%#= image_tag "avatar.jpg" %>
             </div>
           </div>
+        <% end %>
+        <% if policy(lesson).edit? %>
+          <%= link_to edit_lesson_path(lesson), class: "blue-button btn-edit" do %>
+            <i class="far fa-edit"></i> Edit
+          <% end %>
         <% end %>
       </div>
     <% end %>
