@@ -1,12 +1,15 @@
-a {
-  text-decoration: none;
-}
+
+//TODO: Remove text decoration
+// .card-lesson a {
+//   text-decoration: none;
+// }
 
 .card-lesson {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 15px;
+  border-radius: 16px;
 }
 
 // *** TOP PART ***
@@ -17,8 +20,9 @@ a {
   background-position: 0% 70%;
   background-size: cover;
   align-items: flex-start;
-  padding-top: 15px;
+  padding-top: 24px;
   height: 180px;
+  justify-content: space-between;
 }
 
 // Location
@@ -27,7 +31,23 @@ a {
   color: rgb(70, 69, 69);
   padding: 8px 16px;
   border-radius: 0px 15px 15px 0px;
+  font-weight: 500;
+  font-size: 18px;
 }
+
+.card-lesson-header .lesson-edit {
+  opacity: 0;
+  background-color: $blue;
+  padding: 8px 24px;
+  border-radius: 15px 0px 0px 15px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.card-lesson:hover .card-lesson-header .lesson-edit {
+  opacity: 1;
+}
+
 
 
 // *** BODY PART ***
