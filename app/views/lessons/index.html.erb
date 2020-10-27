@@ -10,14 +10,16 @@
         <div class="card-lesson-header">
           <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.location %></p>
           <% if policy(lesson).edit? %>
-            <%= link_to "Edit", edit_lesson_path(lesson) %>
+          <p class="lesson-edit"><i class="far fa-edit"></i> <%= link_to "Edit", edit_lesson_path(lesson) %></p>
           <% end %>
         </div>
+
         <div class="lesson-info">
           <div>
             <h2><%= lesson.title %></h2>
             <p><i class="fas fa-calendar-day"></i> Days <i class="fas fa-clock"></i> time</p>
           </div>
+
           <div class="lesson-price">
             <h2><%= lesson.price %>€</h2>
             <p>per person</p>
