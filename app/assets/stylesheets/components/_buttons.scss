@@ -1,15 +1,14 @@
 .blue-button {
   background-color: $blue;
   color: white;
-  font-style: white;
   border-radius: 5px;
-  border-color: $blue;
-  border-width: 2px;
   padding: 5px 10px 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border: $blue 3px solid;
+  margin-left: 50px;
 }
 
 .large-button {
