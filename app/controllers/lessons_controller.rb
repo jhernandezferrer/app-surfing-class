@@ -4,7 +4,7 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
-    @restaurants = policy_scope(Lesson)
+    @lessons = policy_scope(Lesson)
   end
 
   def new
