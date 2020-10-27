@@ -1,33 +1,40 @@
-<h1>All lessons</h1>
-
-<button><%= link_to "Create new lesson", new_lesson_path %></button>
-<br><br>
 <div class="container">
-  <% @lessons.each do |lesson| %>
-    <%= link_to lesson do %>
 
-      <div class="card-lesson">
-        <div class="card-lesson-header">
-          <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.location %></p>
-          <% if policy(lesson).edit? %>
-          <p class="lesson-edit"><i class="far fa-edit"></i> <%= link_to "Edit", edit_lesson_path(lesson) %></p>
-          <% end %>
-        </div>
+  <h1>All lessons</h1>
 
-        <div class="lesson-info">
-          <div>
-            <h2><%= lesson.title %></h2>
-            <p><i class="fas fa-calendar-day"></i> Days <i class="fas fa-clock"></i> time</p>
+  <button class="btn btn-primary"><%= link_to "Create new lesson", new_lesson_path %></button>
+
+  <br><br>
+
+  <div class="row">
+    <% @lessons.each do |lesson| %>
+      <div class="col-12 col-md-6 col-xl-4">
+        <%= link_to lesson do %>
+
+          <div class="card-lesson">
+            <div class="card-lesson-header">
+              <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.location %></p>
+              <% if policy(lesson).edit? %>
+              <p class="lesson-edit"><i class="far fa-edit"></i> <%= link_to "Edit", edit_lesson_path(lesson) %></p>
+              <% end %>
+            </div>
+
+            <div class="lesson-info">
+              <div>
+                <h2><%= lesson.title %></h2>
+                <p><i class="fas fa-calendar-day"></i> Days <i class="fas fa-clock"></i> time</p>
+              </div>
+
+              <div class="lesson-price">
+                <h2><%= lesson.price %>€</h2>
+                <p>per person</p>
+              </div>
+              <%#TODO: Set avatar class %>
+              <%# <%= image_tag "avatar.jpg" %>
+            </div>
           </div>
-
-          <div class="lesson-price">
-            <h2><%= lesson.price %>€</h2>
-            <p>per person</p>
-          </div>
-          <%#TODO: Set avatar class %>
-          <%# <%= image_tag "avatar.jpg" %>
-        </div>
+        <% end %>
       </div>
     <% end %>
-  <% end %>
+  </div>
 </div>
