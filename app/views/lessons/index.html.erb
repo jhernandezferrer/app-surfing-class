@@ -1,5 +1,4 @@
 <div class="container">
-    <!-- [...] -->
   <%= form_tag lessons_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
@@ -8,13 +7,16 @@
     %>
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
-  <!-- the list of movies -->
 </div>
 
 
 <div class="container">
 
-  <h1>All lessons</h1>
+  <% if params[:query].present? %>
+    <h1>Search results</h1>
+  <% else  %>
+    <h1>All lessons</h1>
+  <% end %>
 
   <button class="btn btn-primary"><%= link_to "Create new lesson", new_lesson_path %></button>
 

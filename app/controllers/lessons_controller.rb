@@ -3,8 +3,11 @@ class LessonsController < ApplicationController
   before_action :find_lesson, only: [:edit, :update, :show, :destroy]
 
   def index
-    @lessons = Lesson.all
-    @lessons = policy_scope(Lesson)
+    if params[:query].present?
+      @lessons = policy_scope(Lesson).where(title: params[:query])
+    else
+      @lessons = policy_scope(Lesson)
+    end
   end
 
   def new
