@@ -1,8 +1,6 @@
 .cont-xl {
-  display: flex;
-  flex-direction: column;
   background-color: white;
-  justify-content: center;
+  background-size: cover;
 }
 
 // *** LESSON HEADER ***
@@ -20,6 +18,12 @@
 
 .lesson-header .lessons-menu a {
   margin: 0px 8px;
+}
+
+@media (max-width: 991px) {
+  .lessons-menu {
+    order: 1;
+  }
 }
 
 // *** BODY ***
@@ -64,7 +68,7 @@
 .reservation-summary h2 {
   color: rgb(53, 53, 53);
   margin: 20px 15px;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -75,5 +79,5 @@
 .map{
   background-color: red;
   padding: 100px;
-  max-width: 1400px;
+  margin-top: 80px;
 }
