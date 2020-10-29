@@ -8,7 +8,6 @@
   display: inline-block;
   font-size: 16px;
   border: $blue 3px solid;
-  margin-left: 50px;
 }
 
 .large-button {
@@ -19,4 +18,20 @@
   text-decoration: none;
   background-color: white;
   color: $blue;
+}
+
+.btn-link {
+  display: inline-block;
+  color: $blue;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  border: 3px solid white;
+}
+
+.btn-link:hover {
+  color: $blue;
+  text-decoration: none;
+  border-bottom: 3px solid $blue;
 }
