@@ -9,7 +9,7 @@
   <div class="row">
     <% @lessons.each do |lesson| %>
       <div class="perimeter-card col-12 col-md-6 col-xl-4">
-        <%= link_to lesson do %>
+        <%= link_to lesson, target: :_blank do %>
           <div class="card-lesson">
             <div class="card-lesson-header">
               <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.location %></p>
