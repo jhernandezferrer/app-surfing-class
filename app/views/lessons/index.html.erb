@@ -1,6 +1,22 @@
 <div class="container">
+  <%= form_tag lessons_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a lesson"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
-  <h1>All lessons</h1>
+
+<div class="container">
+
+  <% if params[:query].present? %>
+    <h1>Search results</h1>
+  <% else  %>
+    <h1>All lessons</h1>
+  <% end %>
 
   <%= link_to "Create new lesson", new_lesson_path, class: "blue-button" %>
 
