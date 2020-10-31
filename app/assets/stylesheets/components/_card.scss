@@ -1,6 +1,8 @@
 // GRID
 //TODO: Design a grid
-
+div {
+  border: 1px solid black;
+}
 
 a:hover {
   text-decoration: none;
@@ -106,6 +108,8 @@ a:hover {
 
 // LESSON STUDENTS
 .lesson-info .class-completed {
+  display: inline-block;
+  padding: 2px 10px;
   color: red;
   font-weight: bold;
   margin: 0;
