@@ -17,7 +17,7 @@
 }
 
 .lesson-header .lessons-menu a {
-  margin: 0px 8px;
+  margin-left: 8px;
 }
 
 @media (max-width: 991px) {
@@ -67,11 +67,16 @@
 
 .reservation-summary h2 {
   color: rgb(53, 53, 53);
-  margin: 20px 15px;
+  margin: 20px;
   font-size: 18px;
   font-weight: 400;
 }
 
+.reservation-summary .lesson-price {
+  color: $blue;
+  font-size: 24px;
+  font-weight: 500;
+}
 
 
 //*** MAP ***

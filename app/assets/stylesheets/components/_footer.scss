@@ -4,4 +4,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  color: $blue;
+}
+
+.footer i {
+  margin-right: 40px;
+  font-size: 36px;
 }

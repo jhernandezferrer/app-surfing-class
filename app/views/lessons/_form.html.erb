@@ -2,9 +2,12 @@
 <%= simple_form_for @lesson do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :location %>
-  <%= f.input :start_lesson %>
-  <%= f.input :end_lesson %>
+  <%= f.input :address %>
+  <%= f.input :city %>
+  <%= f.input :class_day %>
+  <%= f.input :lesson_start %>
+  <%= f.input :lesson_end %>
+  <%= f.input :student_limit %>
   <%= f.input :price %>
 
   <%= f.button :submit, class: "blue-button" %>

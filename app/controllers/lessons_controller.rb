@@ -27,6 +27,14 @@ class LessonsController < ApplicationController
   end
 
   def show
+    # the `geocoded` scope filters only lessons with coordinates (latitude & longitude)
+    # @lesson = Lesson.where.not(latitude: nil, longitude: nil)
+    # @markers = @lesson.geocoded.map do |lesson|
+    #   {
+    #     lat: lesson.latitude,
+    #     lng: lesson.longitude
+    #   }
+    # end
   end
 
   def update
@@ -48,7 +56,7 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:title, :description, :location, :start_lesson, :end_lesson, :price)
+    params.require(:lesson).permit(:title, :description, :address, :lesson_start, :class_day, :lesson_end, :price, :city, :student_limit)
   end
 
   def find_lesson
@@ -56,8 +64,8 @@ class LessonsController < ApplicationController
     authorize @lesson
   end
 
-  # def lesson_duration
+  #  def lesson_duration
   #   find_lesson
-  #   @duration = @lesson.end_lesson - @lesson.start_lesson
-  # end
+  #   @duration = @lesson.lesson_end - @lesson.lesson_start
+  #  end
 end

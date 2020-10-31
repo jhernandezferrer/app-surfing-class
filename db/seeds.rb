@@ -22,15 +22,16 @@ puts 'Creating 20 fake users...'
   user.save!
   puts 'Creating 2 fake lessons...'
   (1..2).each do |id|
-    start_lesson = Faker::Time.forward(days: 5,  period: :morning)
-    end_lesson = start_lesson + 30.minutes
     lesson = Lesson.new(
       title: Faker::Hipster.word,
       description: Faker::Hipster.sentence,
-      location: Faker::Address.city,
-      start_lesson: start_lesson,
-      end_lesson: end_lesson,
+      address: Faker::Address.street_address,
+      city: Faker::Address.city,
+      class_day: Faker::Date.between(from: Date.today, to: '2020-12-31'),
+      lesson_start: Time.now,
+      lesson_end: Time.now + (rand(1..5)*60*60),
       price: rand(10..30),
+      student_limit: rand(1..15),
       user: user
       )
     lesson.save!

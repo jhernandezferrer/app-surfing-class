@@ -79,6 +79,7 @@ a:hover {
   margin: 0;
 }
 
+// PRICE
 .card-lesson .lesson-info .lesson-price {
   font-weight: 600;
   color: $blue;
@@ -91,4 +92,15 @@ a:hover {
 
 .card-lesson .lesson-info .lesson-price h2 {
   margin: 0;
+}
+
+// LESSON DAY
+.lesson-info .lesson-day {
+  background-color: $blue;
+  color: white;
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  padding: 8px 15px;
+  border-radius: 0px 15px 15px 0px;
 }

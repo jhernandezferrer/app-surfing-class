@@ -1,6 +1,14 @@
 <div class="footer">
-  <p class="footer-text">Contact Us</p>
-  <%= image_tag "facebook.png", class: "facebook social avatar" %>
-  <%= image_tag "instagram.png", class: "instagram social avatar" %>
-  <%= image_tag "email.png", class: "email social avatar" %>
+  <%= link_to root_path do %>
+    <p class="footer-text">Contact Us</p>
+  <% end %>
+  <%= link_to root_path do %>
+    <i class="fab fa-facebook-square"></i>
+  <% end %>
+  <%= link_to root_path do %>
+    <i class="fab fa-instagram"></i>
+  <% end %>
+  <%= link_to root_path do %>
+    <i class="fas fa-envelope"></i>
+  <% end %>
 </div>
