@@ -23,9 +23,13 @@ class UsersController < ApplicationController
       redirect_to user_path
     end
   end
-end
 
-private
+  def my_lessons
+    @lessons = current_user.lessons
+    authorize User
+  end
+
+  private
 
   def user_params
     params.require(:user).permit(:name, :description)
@@ -35,3 +39,6 @@ private
     @user = User.find(params[:id])
     authorize @user
   end
+end
+
+

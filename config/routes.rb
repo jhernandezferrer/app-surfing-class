@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   end
 
   #users routes
-  resources :users, only: [ :show, :edit, :update, :destroy ]
-
+  resources :users, only: [ :show, :edit, :update, :destroy ] do
+    member do
+     get :my_lessons
+    end
+  end
   #bookings routes
   resources :bookings, only: [ :index, :show ]
 end
