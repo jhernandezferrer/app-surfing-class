@@ -1,5 +1,6 @@
 <%= simple_form_for @user do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.submit %>
+  <%= f.button :submit, class: "blue-button" %>
+  <%= link_to 'Back', user_path, class: "btn btn-outline-secondary" %>
 <% end %>
