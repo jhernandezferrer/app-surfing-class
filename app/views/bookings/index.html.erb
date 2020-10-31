@@ -13,11 +13,11 @@
     </p>
     <p>
       <strong>Location:</strong>
-      <%= booking.lesson.location %>
+      <%= booking.lesson.city %>
     </p>
     <p>
       <strong>Duration:</strong>
-      <%=  (booking.lesson.end_lesson - booking.lesson.start_lesson).to_i / 60 %>
+      <%=  (booking.lesson.lesson_end - booking.lesson.lesson_start).to_i / 60 %>
       min.
     </p>
     <p>
