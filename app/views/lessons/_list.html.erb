@@ -3,9 +3,15 @@
       <div class="perimeter-card col-12 col-md-6 col-xl-4">
         <%= link_to lesson, target: :_blank do %>
           <div class="card-lesson">
-            <div class="card-lesson-header">
-              <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.city %></p>
-            </div>
+            <% if lesson.photo.present? %>
+              <div class="card-lesson-header" style="background-image: url('<%= cl_image_path lesson.photo.key, height: 300, width: 400, crop: :fill %>')">
+                  <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.city %></p>
+              </div>
+            <% else  %>
+              <div class="card-lesson-header">
+                  <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.city %></p>
+              </div>
+            <% end %>
 
             <div class="lesson-info">
               <div class="lesson-day">
