@@ -1,0 +1,29 @@
+<div class="container">
+
+  <h1>My Bookings</h1>
+
+  <% @bookings.each do |booking| %>
+    <div class="container">
+    <p>
+      <strong><%= booking.lesson.title %></strong>
+    </p>
+    <p>
+      <strong>Teacher:</strong>
+      <%= booking.lesson.user_id %>
+    </p>
+    <p>
+      <strong>Location:</strong>
+      <%= booking.lesson.location %>
+    </p>
+    <p>
+      <strong>Duration:</strong>
+      <%=  (booking.lesson.end_lesson - booking.lesson.start_lesson).to_i / 60 %>
+      min.
+    </p>
+    <p>
+      <strong>Price:</strong>
+      <%= booking.lesson.price %> € per person.
+    </p>
+    </div>
+  <% end %>
+</div>
