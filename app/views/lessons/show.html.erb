@@ -55,7 +55,7 @@
               <% if @lesson.bookings.size < @lesson.student_limit %>
                 <%= link_to 'Book Now!', new_lesson_booking_path(@lesson), class: "blue-button" %>
               <% else %>
-                <h2 class="class-completed">COMPLETED</h2>
+                <h2>COMPLETED</h2>
               <% end %>
             <% end %>
         </div>

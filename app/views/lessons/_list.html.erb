@@ -20,7 +20,7 @@
               <%# TODO: Show diferent time if is minutes or hours %>
               <div>
                 <h2><%= lesson.title %></h2>
-                <div>
+                <div class="details-info">
                   <p><i class="fas fa-clock"></i> <%= ((lesson.lesson_end - lesson.lesson_start)/60).to_i %> min.</p>
                   <% if lesson.bookings.size < lesson.student_limit %>
                     <p><i class="fas fa-user"></i> <%= lesson.bookings.size %> / <%= lesson.student_limit %></p>
