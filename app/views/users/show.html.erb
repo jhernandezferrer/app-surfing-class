@@ -1,0 +1,6 @@
+<h2> Name: <%= @user.name %></h2>
+<p> Description: <%= @user.description %></p>
+<%= link_to 'Edit', edit_user_path(@user), class: "blue-button" %>
+<%= link_to 'Back', root_path, class: "blue-button" %>
+<%= link_to 'Bookings', bookings_path, class: "blue-button"%>
+<%= link_to 'Lessons', lessons_path, class: "blue-button" %>
