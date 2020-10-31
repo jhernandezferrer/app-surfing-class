@@ -67,3 +67,6 @@ gem 'simple_form'
 
 # Pundit -> To authorization actions
 gem 'pundit'
+
+# Geocode
+gem 'geocoder'

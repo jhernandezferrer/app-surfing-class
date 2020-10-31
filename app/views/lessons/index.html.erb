@@ -28,13 +28,20 @@
         <%= link_to lesson, target: :_blank do %>
           <div class="card-lesson">
             <div class="card-lesson-header">
-              <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.location %></p>
+              <p class="lesson-location"><i class="fas fa-map-marker-alt"></i> <%= lesson.city %></p>
             </div>
 
             <div class="lesson-info">
+              <div class="lesson-day">
+                <i class="fas fa-calendar-day"></i> <%= lesson.class_day.strftime("%A, %b %d") %>
+              </div>
+              <%# TODO: Show diferent time if is minutes or hours %>
               <div>
                 <h2><%= lesson.title %></h2>
-                <p><i class="fas fa-calendar-day"></i> Days <i class="fas fa-clock"></i> time</p>
+                <div>
+                  <p><i class="fas fa-clock"></i> <%= ((lesson.lesson_end - lesson.lesson_start)/60).to_i %> min.</p>
+                  <p><i class="fas fa-user"></i> <%= lesson.bookings.size %> / <%= lesson.student_limit %></p>
+                </div>
               </div>
 
               <div class="lesson-price">

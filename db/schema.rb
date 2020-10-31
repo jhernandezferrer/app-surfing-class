@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_191424) do
+ActiveRecord::Schema.define(version: 2020_10_31_104046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,17 @@ ActiveRecord::Schema.define(version: 2020_10_22_191424) do
     t.string "title"
     t.text "description"
     t.bigint "user_id", null: false
-    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "start_lesson"
-    t.datetime "end_lesson"
     t.float "price"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "city"
+    t.time "lesson_start"
+    t.time "lesson_end"
+    t.date "class_day"
+    t.integer "student_limit"
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 

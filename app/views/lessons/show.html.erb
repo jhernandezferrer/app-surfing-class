@@ -4,8 +4,8 @@
     <%# Header with links %>
     <div class="row lesson-header">
     <%#TODO: Put the title down in SM size %>
-      <h1 class="col-sm-12 col-md-6"><%= @lesson.title %></h1>
-      <div class="lessons-menu col-sm-12 col-md-6">
+      <h1 class="col-6"><%= @lesson.title %></h1>
+      <div class="lessons-menu col-6">
         <% if current_user == @lesson.user %>
           <%= link_to edit_lesson_path(@lesson), class: "btn-link" do %>
             <i class="far fa-edit"></i> Edit
@@ -32,35 +32,33 @@
         <div class="lesson-show-teacher">
           <%= image_tag "avatar.png", class: "avatar-xl" %>
           <div>
-            <h3><%= @lesson.user_id %></h3>
+            <h3><%= @lesson.user.name %></h3>
             <%# TODO: Insert description user %>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium esse ad incidunt qui quis. Illo aut, explicabo, voluptas adipisci consequuntur cumque minus obcaecati cum alias tempora voluptates! Accusamus, vero dolorum.
+              <%= @lesson.user.description %>
             </p>
           </div>
         </div>
       </div>
 
       <%# Card with booking info %>
-      <div class="reservation-summary col-sm-12 col-md-8 col-lg-4">
-        <div>
-          <h2><i class="fas fa-map-marker-alt"></i> <%= @lesson.location %></h2>
-          <h2><i class="fas fa-calendar-day"></i> <%= @lesson.start_lesson.strftime("%A, %b %d") %></h2>
-          <h2><i class="fas fa-clock"></i> <%= @lesson.start_lesson.strftime("%-k:%M") %> - <%= @lesson.end_lesson.strftime("%-k:%M") %></h2>
-          <h2><strong><%= @lesson.price %> €</strong> <small>per person.</small></h2>
+      <div class=" col-sm-12 col-md-8 col-lg-4">
+        <div class="reservation-summary">
+          <div>
+            <h2><i class="fas fa-map-marker-alt"></i> <%= @lesson.city %></h2>
+            <h2><i class="fas fa-calendar-day"></i> <%= @lesson.class_day.strftime("%A, %b %d") %></h2>
+            <h2><i class="fas fa-clock"></i> <%= @lesson.lesson_start.strftime("%-k:%M") %> - <%= @lesson.lesson_end.strftime("%-k:%M") %></h2>
+            <h2><i class="fas fa-user"></i> <%= @lesson.bookings.size %> / <%= @lesson.student_limit %></h2>
+            <h2 class="lesson-price"><strong><%= @lesson.price %> €</strong> <small>per person.</small></h2>
+          </div>
+            <% if current_user != @lesson.user %>
+              <%= link_to 'Book Now!', new_lesson_booking_path(@lesson), class: "blue-button" %>
+            <% end %>
         </div>
-          <% if current_user != @lesson.user %>
-            <%= link_to 'Book Now!', new_lesson_booking_path(@lesson), class: "blue-button" %>
-          <% end %>
       </div>
     </div>
 
     <%# Display map %>
-    <div class="map">
-    </div>
-  </div>
-
-
 
 </div>
 
