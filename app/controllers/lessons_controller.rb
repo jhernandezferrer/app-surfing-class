@@ -27,14 +27,12 @@ class LessonsController < ApplicationController
   end
 
   def show
+    # MAPBOX
     # the `geocoded` scope filters only lessons with coordinates (latitude & longitude)
-    # @lesson = Lesson.where.not(latitude: nil, longitude: nil)
-    # @markers = @lesson.geocoded.map do |lesson|
-    #   {
-    #     lat: lesson.latitude,
-    #     lng: lesson.longitude
-    #   }
-    # end
+    @markers = [{
+        lat: @lesson.latitude,
+        lng: @lesson.longitude
+      }]
   end
 
   def update
