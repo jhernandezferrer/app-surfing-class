@@ -1,7 +1,8 @@
 class Lesson < ApplicationRecord
+  has_one_attached :photo
   has_many :bookings
   belongs_to :user
-  
+
   validates :title, :description, :address, :city, :class_day, :lesson_start, :lesson_end, :user, :price, :student_limit, presence: true
 
   geocoded_by :address
