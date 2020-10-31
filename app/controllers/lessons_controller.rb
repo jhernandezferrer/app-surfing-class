@@ -4,7 +4,7 @@ class LessonsController < ApplicationController
 
   def index
     if params[:query].present?
-      @lessons = policy_scope(Lesson).where(title: params[:query])
+      @lessons = policy_scope(Lesson).global_search(params[:query])
     else
       @lessons = policy_scope(Lesson)
     end
@@ -30,11 +30,11 @@ class LessonsController < ApplicationController
   end
 
   def update
-      if @lesson.update(lesson_params)
-        redirect_to @lesson, notice: 'Lesson was successfully updated.'
-      else
-        render 'edit'
-      end
+    if @lesson.update(lesson_params)
+      redirect_to @lesson, notice: 'Lesson was successfully updated.'
+    else
+      render 'edit'
+    end
   end
 
   def destroy
