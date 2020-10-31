@@ -43,10 +43,10 @@ class LessonsController < ApplicationController
     else
       render 'edit'
     end
-  end
+  end 
 
   def destroy
-    if @Lesson.destroy
+    if @lesson.destroy
       redirect_to lessons_url, notice: 'Lesson was successfully deleted.'
     else
       redirect_to lessons_path
