@@ -52,13 +52,23 @@
             <h2 class="lesson-price"><strong><%= @lesson.price %> €</strong> <small>per person.</small></h2>
           </div>
             <% if current_user != @lesson.user %>
-              <%= link_to 'Book Now!', new_lesson_booking_path(@lesson), class: "blue-button" %>
+              <% if @lesson.bookings.size < @lesson.student_limit %>
+                <%= link_to 'Book Now!', new_lesson_booking_path(@lesson), class: "blue-button" %>
+              <% else %>
+                <h2 class="class-completed">COMPLETED</h2>
+              <% end %>
             <% end %>
         </div>
       </div>
     </div>
 
     <%# Display map %>
-
+    <div class="map">
+      <h2>Location:</h2>
+      <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
 </div>
-

@@ -35,7 +35,7 @@ a:hover {
 // Location
 .lesson-location {
   background-color: white;
-  color: rgb(70, 69, 69);
+  color: rgb(78, 78, 78);
   padding: 8px 16px;
   border-radius: 0px 15px 15px 0px;
   font-weight: 500;
@@ -74,8 +74,6 @@ a:hover {
 }
 
 .card-lesson .lesson-info div p {
-  font-weight: 100;
-  color: gray;
   margin: 0;
 }
 
@@ -83,6 +81,7 @@ a:hover {
 .card-lesson .lesson-info .lesson-price {
   font-weight: 600;
   color: $blue;
+  margin: 0;
 }
 
 .card-lesson .lesson-info .lesson-price p {
@@ -104,3 +103,11 @@ a:hover {
   padding: 8px 15px;
   border-radius: 0px 15px 15px 0px;
 }
+
+// LESSON STUDENTS
+.lesson-info .class-completed {
+  color: red;
+  font-weight: bold;
+  margin: 0;
+}
+

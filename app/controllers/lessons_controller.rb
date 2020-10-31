@@ -27,14 +27,12 @@ class LessonsController < ApplicationController
   end
 
   def show
+    # MAPBOX
     # the `geocoded` scope filters only lessons with coordinates (latitude & longitude)
-    # @lesson = Lesson.where.not(latitude: nil, longitude: nil)
-    # @markers = @lesson.geocoded.map do |lesson|
-    #   {
-    #     lat: lesson.latitude,
-    #     lng: lesson.longitude
-    #   }
-    # end
+    @markers = [{
+        lat: @lesson.latitude,
+        lng: @lesson.longitude
+      }]
   end
 
   def update
@@ -43,10 +41,10 @@ class LessonsController < ApplicationController
     else
       render 'edit'
     end
-  end
+  end 
 
   def destroy
-    if @Lesson.destroy
+    if @lesson.destroy
       redirect_to lessons_url, notice: 'Lesson was successfully deleted.'
     else
       redirect_to lessons_path
