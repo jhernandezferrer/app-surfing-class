@@ -1,3 +1,7 @@
+div {
+  border: 1px solid black;
+}
+
 .footer {
   background-color: $yellow;
   height: 100px;
@@ -10,4 +14,8 @@
 .footer i {
   margin-right: 40px;
   font-size: 36px;
+}
+
+.footer p {
+  margin-right: 40px;
 }
